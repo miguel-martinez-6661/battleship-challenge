@@ -45,7 +45,10 @@ export const Content = () => {
           <PlayerPoints currentHits={currentHits} playerPoint={playerPoints} />
         </div>
         <div className="lg:w-2/3">
-          <GameTable data={tableLayout} handlePositionClick={onClickPosition} />
+          <GameTable
+            data={currentLayout}
+            handlePositionClick={onClickPosition}
+          />
         </div>
       </div>
     </>

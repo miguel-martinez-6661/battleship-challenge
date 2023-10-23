@@ -4,6 +4,11 @@ import BattleShipIcon from "../assets/Battleship-Shape.png";
 import DestroyerShipIcon from "../assets/Destroyer-Shape.png";
 import SubmarineIcon from "../assets/Submarine-Shape.png";
 
+export enum TableAxys {
+  X = 0,
+  Y = 1,
+}
+
 export enum ShipType {
   carrier = "carrier",
   battleship = "battleship",
@@ -13,16 +18,7 @@ export enum ShipType {
 }
 
 export const tableLayout = [
-  [...new Array(10)],
-  [...new Array(10)],
-  [...new Array(10)],
-  [...new Array(10)],
-  [...new Array(10)],
-  [...new Array(10)],
-  [...new Array(10)],
-  [...new Array(10)],
-  [...new Array(10)],
-  [...new Array(10)],
+  ...[...new Array(10)].map(() => [...[...new Array(10)]]),
 ];
 
 export const shipTypes = {
@@ -100,8 +96,3 @@ export const shipTypesAssets = {
   [ShipType.destroyer]: DestroyerShipIcon,
   [ShipType.submarine]: SubmarineIcon,
 };
-
-export interface GameState {
-  shipTypes: typeof shipTypes;
-  layout: typeof layout;
-}

@@ -22,3 +22,22 @@ export interface ShotResults {
 export interface Hit {
   [key: string]: number;
 }
+
+export interface ShipPositionRange {
+  axys: number;
+  positions: {
+    constant: string;
+    dynamic: {
+      [key: string]: boolean;
+    };
+  };
+}
+
+export interface OperativeTableLayout {
+  [key: string]: {
+    ship: string;
+    positions: {
+      [key: string]: boolean;
+    };
+  };
+}
